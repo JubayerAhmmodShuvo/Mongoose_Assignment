@@ -8,7 +8,7 @@ const port: number = 5000;
 
 
 async function bootstrap() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/practice-mongoose');
+  await mongoose.connect('mongodb://127.0.0.1:27017/bookstore');
   try {
     console.log(`Database Connection is Successful😀`);
     app.listen(port, () => {
