@@ -1,8 +1,10 @@
 export interface Book {
   title: string;
-  author: string[];
+  author: string;
   genre: string;
   publicationYear: number;
+  rating: number;
+  price: number;
   publisher: {
     name: string;
     location: string;
@@ -11,7 +13,4 @@ export interface Book {
     user: string;
     comment: string;
   }[];
-  rating: number;
-  price: number;
-  featured?: string;
 }
