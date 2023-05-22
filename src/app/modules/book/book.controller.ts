@@ -10,4 +10,18 @@ export const getAllBooks = async (req: Request, res: Response) => {
   }
 };
 
+export const getBooksByGenre = async (req: Request, res: Response) => {
+  const { genre } = req.params;
+  try {
+    const books = await BookModel.find({ genre });
+    res.json(books);
 
+  } catch (error) {
+    res.status(500).json({
+
+      message: 'Internal server error',
+
+
+    })
+  }
+}
