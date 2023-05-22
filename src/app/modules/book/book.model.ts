@@ -1,5 +1,5 @@
-import { Schema, model, Document } from 'mongoose';
-import { Book } from './book.interface';
+import { Schema, model, Document } from "mongoose";
+import { Book } from "./book.interface";
 
 const bookSchema = new Schema<Book & Document>({
   title: { type: String, required: true },
@@ -20,4 +20,4 @@ const bookSchema = new Schema<Book & Document>({
   ],
 });
 
-export const BookModel = model<Book & Document>('Book', bookSchema);
+export const BookModel = model<Book & Document>("Book", bookSchema);

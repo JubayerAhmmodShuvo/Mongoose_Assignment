@@ -13,4 +13,5 @@ export interface Book {
     user: string;
     comment: string;
   }[];
+  featured?: string;
 }
