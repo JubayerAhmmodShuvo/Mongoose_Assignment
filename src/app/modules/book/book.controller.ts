@@ -53,3 +53,22 @@ export const getFeaturedBooks = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
+
+export const updateBookPrices = async (req: Request, res: Response) => {
+  try {
+    const result = await BookModel.aggregate([
+      {
+        $match: { publicationYear: { $gt: 2020 }, price: { $type: "string" } },
+      },
+      {
+        $set: { price: { $toInt: "$price" } },
+      },
+    ]);
+
+    res.json({ message: "Book prices updated successfully.", result });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to update book prices.", error });
+  }
+};
